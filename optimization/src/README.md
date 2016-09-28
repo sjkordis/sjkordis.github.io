@@ -11,11 +11,14 @@ Each change introduced to improve performance is described in the tables below.
 
 Web site URL:  [https://sjkordis.github.io/optimization/src/](https://sjkordis.github.io/optimization/src/)
 
-Original PageSpeed Insights score = 27
+Original PageSpeed Insights score = 27 mobile / 29 desktop
 
-File | Location | Change Made | Score
----- | -------- | ----------- | -----
-index.html | ??? | Added `media = "print"` attribute to stylesheet link for print.css | ???
+File | Location | Change Made | Mobile Score | Desktop Score |
+---- | -------- | ----------- | ------------ | ------------- |
+index.html | 14 | Added `media = "print"` attribute to stylesheet link for print.css | 27 | 29
+pizzeria.jpg | n/a | Resized to 100x75 px for thumbnail | 72 | 86
+index.html | 24 | Added async attribute to google-analytics link | 72 | 86
+index.html | 11 | Removed link to OpenSans web font (also changed font-family to "san serif" in css/style.css) | ??? | ???
 css/style.css | All | Minified CSS using cssminifier.com | ???
 js/perfmatters.js | All | Minified JavaScript | ???
 index.html | Line ??? | Placed CSS inline | ???
