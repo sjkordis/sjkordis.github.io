@@ -20,16 +20,17 @@ pizzeria.jpg | n/a | Resized to 100x75 px for thumbnail | 72 | 86
 index.html | 24 | Added `async` attribute to google-analytics link | 72 | 86
 css/style.css | 11 | Changed font-family to "san serif" in css/style.css (also removed link to OpenSans web font in index.html) | 85 | 91
 index.html | 73 | Inlined CSS at end of HTML file | 93 | 94
-index.html | 76 | Minified CSS using cssminifier.com | ??? | ???
-js/perfmatters.js | All | Minified JavaScript | ??? | ???
-index.html | Line ??? | Placed CSS inline | ??? | ???
-index.html | Line ??? | Placed JavaScript inline | ??? | ???
+index.html | 76 | Minified CSS using cssminifier.com | 93 | 94
 
 ### <a name="pizzeria"></a>Part 2: Pizzeria
 
 Web site URL:  [https://sjkordis.github.io/optimization/src/views/pizza.html](https://sjkordis.github.io/optimization/src/views/pizza.html)
 
+The Time columns in the table below represent the average scripting time to generate the last 10 frames.
 
+File | Location | Change Made | Pipeline Stage | Before Time | After Time |
+---- | -------- | ----------- | -------------- | ----------- | ---------- |
+main.js | updatePositions (500) | Scripting | 169 ms |  
 
 ### Cameron's Original Instructions
 Your challenge, if you wish to accept it (and we sure hope you will), is to optimize this online portfolio for speed! In particular, optimize the critical rendering path and make this page render as quickly as possible by applying the techniques you've picked up in the [Critical Rendering Path course](https://www.udacity.com/course/ud884).
