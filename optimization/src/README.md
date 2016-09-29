@@ -1,9 +1,10 @@
 ## Website Performance Optimization Portfolio Project
 
-Welcome to my website optimization project. This project has two parts:
+Welcome to my website optimization project. This project has three parts:
 
-* The [PageSpeed](#pagespeed) part
-* The [Pizzeria](#pizzeria) part
+* Part 1: [PageSpeed](#pagespeed)
+* Part 2: [Animated Pizzas](#pizzeria)
+* Part 3: [Pizza Slider](#slider)
 
 Each change introduced to improve performance is described in the tables below.
 
@@ -12,6 +13,8 @@ Each change introduced to improve performance is described in the tables below.
 Web site URL:  [https://sjkordis.github.io/optimization/src/](https://sjkordis.github.io/optimization/src/)
 
 Original PageSpeed Insights score = 27 mobile / 29 desktop
+
+Final result = 83 mobile / 94 desktop
 
 File | Location | Change Made | Mobile Score | Desktop Score |
 ---- | -------- | ----------- | ------------ | ------------- |
@@ -22,67 +25,38 @@ css/style.css | 11 | Changed font-family to "san serif" in css/style.css (also r
 index.html | 73 | Inlined CSS at end of HTML file | 93 | 94
 index.html | 76 | Minified CSS using cssminifier.com | 93 | 94
 
-### <a name="pizzeria"></a>Part 2: Pizzeria
+### <a name="pizzeria"></a>Part 2: Animated Pizzas
 
 Web site URL:  [https://sjkordis.github.io/optimization/src/views/pizza.html](https://sjkordis.github.io/optimization/src/views/pizza.html)
 
-The Time columns in the table below represent the average scripting time to generate the last 10 frames.
+Original animation speed = 6 fps
 
-File | Location | Change Made | Pipeline Stage | Before Time | After Time |
----- | -------- | ----------- | -------------- | ----------- | ---------- |
-main.js | updatePositions (500) | Scripting | 169 ms |  
+Final result = 60+ fps
 
-### Cameron's Original Instructions
-Your challenge, if you wish to accept it (and we sure hope you will), is to optimize this online portfolio for speed! In particular, optimize the critical rendering path and make this page render as quickly as possible by applying the techniques you've picked up in the [Critical Rendering Path course](https://www.udacity.com/course/ud884).
+Note: The Speed column reflects the lowest frames per second observed during scrolling.
 
-To get started, check out the repository and inspect the code.
+File | Location | Pipeline Stage | Change | Speed
+---- | -------- | -------------- | ------ | -----
+main.js | updatePositions (517) | Scripting | Moved the DOM reference and math out of the FOR loop | 24 fps
+main.js | updatePositions (513) | Scripting | Changed querySelectorAll call to document.getElementsByClassName | 24 fps
+main.js | updatePositions (518) | Scripting | Used "transform" instead of "left" to reduce painting time | 36 fps
+main.js | addEventListener (553) | Scripting, Painting | Reduced number of pizzas from 200 to 64 | 52 fps
+css/style.css | .movers (36) | Painting | Added `backface-visibility: hidden` property to put each animated pizza on its own layer | 60+ fps
 
-### Getting started
+### <a name="slider"></a>Part 3: Pizza Slider
 
-####Part 1: Optimize PageSpeed Insights score for index.html
+Web site URL:  [https://sjkordis.github.io/optimization/src/views/pizza.html](https://sjkordis.github.io/optimization/src/views/pizza.html)
 
-Some useful tips to help you get started:
+Original animation speed = 6 fps
 
-1. Check out the repository
-1. To inspect the site on your phone, you can run a local server
+Final result = 60+ fps
 
-  ```bash
-  $> cd /path/to/your-project-folder
-  $> python -m SimpleHTTPServer 8080
-  ```
+Note: The Speed column reflects the lowest frames per second observed during scrolling.
 
-1. Open a browser and visit localhost:8080
-1. Download and install [ngrok](https://ngrok.com/) to the top-level of your project directory to make your local server accessible remotely.
-
-  ``` bash
-  $> cd /path/to/your-project-folder
-  $> ./ngrok http 8080
-  ```
-
-1. Copy the public URL ngrok gives you and try running it through PageSpeed Insights! Optional: [More on integrating ngrok, Grunt and PageSpeed.](http://www.jamescryer.com/2014/06/12/grunt-pagespeed-and-ngrok-locally-testing/)
-
-Profile, optimize, measure... and then lather, rinse, and repeat. Good luck!
-
-####Part 2: Optimize Frames per Second in pizza.html
-
-To optimize views/pizza.html, you will need to modify views/js/main.js until your frames per second rate is 60 fps or higher. You will find instructive comments in main.js.
-
-You might find the FPS Counter/HUD Display useful in Chrome developer tools described here: [Chrome Dev Tools tips-and-tricks](https://developer.chrome.com/devtools/docs/tips-and-tricks).
-
-### Optimization Tips and Tricks
-* [Optimizing Performance](https://developers.google.com/web/fundamentals/performance/ "web performance")
-* [Analyzing the Critical Rendering Path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/analyzing-crp.html "analyzing crp")
-* [Optimizing the Critical Rendering Path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/optimizing-critical-rendering-path.html "optimize the crp!")
-* [Avoiding Rendering Blocking CSS](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-blocking-css.html "render blocking css")
-* [Optimizing JavaScript](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript.html "javascript")
-* [Measuring with Navigation Timing](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/measure-crp.html "nav timing api"). We didn't cover the Navigation Timing API in the first two lessons but it's an incredibly useful tool for automated page profiling. I highly recommend reading.
-* <a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/eliminate-downloads.html">The fewer the downloads, the better</a>
-* <a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/optimize-encoding-and-transfer.html">Reduce the size of text</a>
-* <a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/image-optimization.html">Optimize images</a>
-* <a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching.html">HTTP caching</a>
-
-### Customization with Bootstrap
-The portfolio was built on Twitter's <a href="http://getbootstrap.com/">Bootstrap</a> framework. All custom styles are in `dist/css/portfolio.css` in the portfolio repo.
-
-* <a href="http://getbootstrap.com/css/">Bootstrap's CSS Classes</a>
-* <a href="http://getbootstrap.com/components/">Bootstrap's Components</a>
+File | Location | Pipeline Stage | Change | Speed
+---- | -------- | -------------- | ------ | -----
+main.js | updatePositions (517) | Scripting | Moved the DOM reference and math out of the FOR loop | 24 fps
+main.js | updatePositions (513) | Scripting | Changed querySelectorAll call to document.getElementsByClassName | 24 fps
+main.js | updatePositions (518) | Scripting | Used "transform" instead of "left" to reduce painting time | 36 fps
+main.js | addEventListener (553) | Scripting, Painting | Reduced number of pizzas from 200 to 64 | 52 fps
+css/style.css | .movers (36) | Painting | Added `backface-visibility: hidden` property to put each animated pizza on its own layer | 60+ fps

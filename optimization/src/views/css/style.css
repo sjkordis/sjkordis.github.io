@@ -33,6 +33,8 @@ form {
   position: fixed;
   width: 256px;
   z-index: -1;
+  /* Optimation 5: Put each pizza on its own layer */;
+  backface-visibility: hidden;
 }
 
 .randomPizzaContainer {

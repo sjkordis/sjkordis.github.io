@@ -5,7 +5,6 @@ jank-free at 60 frames per second.
 There are two major issues in this code that lead to sub-60fps performance. Can
 you spot and fix both?
 
-
 Built into the code, you'll find a few instances of the User Timing API
 (window.performance), which will be console.log()ing frame rate data into the
 browser console. To learn more about User Timing API, check out:
@@ -18,6 +17,15 @@ cameron *at* udacity *dot* com
 
 // As you may have realized, this website randomly generates pizzas.
 // Here are arrays of all possible pizza ingredients.
+
+// Constants introduced to optimize updatePositions and make testing easier
+const NUM_COLS = 8;
+const COL_WIDTH = 256;
+const NUM_PHASES = 5;
+const NUM_PIZZAS = 64;
+// Optimization 4: See if we can do this with 64 pizzas instead of 200.
+
+
 var pizzaIngredients = {};
 pizzaIngredients.meats = [
   "Pepperoni",
@@ -499,33 +507,39 @@ function logAverageFrame(times) {   // times is the array of User Timing measure
 // Moves the sliding background pizzas based on scroll position
 function updatePositions() {
   frame++;
-  window.performance.mark("mark_start_frame");
+  //window.performance.mark("mark_start_frame");
 
-  var items = document.querySelectorAll('.mover');
-  // Move the DOM lookup out of the for loop, and simplify the math
+  // Optimization 2: Use the more effecient getElementsByClassName method here
+  var items = document.getElementsByClassName('mover');
+  // End of optimization 2
+
+  // Optimization 1: Move the DOM lookup out of the FOR loop, and simplify the math
   var top = document.body.scrollTop / 1250;
   var phases = [];
-  for (var i = 0; i < 5; i++) {
-    phases[i] = Math.sin(top + (i % 5));
+  for (var i = 0; i < NUM_PHASES; i++) {
+    phases[i] = Math.sin(top + i);
   }
-  // End of optimization edit
+  // End of optimization 1
 
-  for (var i = 0; i < items.length; i++) {
-    /*
-    var phase = Math.sin((document.body.scrollTop / 1250) + (i % 5));
-    console.log('phase is ' + phase);
-    */
-    items[i].style.left = items[i].basicLeft + 100 * phases[i % 5] + 'px';
+  // Optimization 3: Use "transform" instead of "style.left" to avoid extra painting
+  for (var i = 0; i < NUM_PIZZAS; i++) {
+    items[i].style.transform = 'translateX(' + (100 * phases[i % NUM_PHASES]) + 'px)';
   }
+  // End of optimization 3
+
+  //This added much more scripting overhead, so I'm not using it
+  //requestAnimationFrame(updatePositions);
 
   // User Timing API to the rescue again. Seriously, it's worth learning.
   // Super easy to create custom metrics.
+  /*
   window.performance.mark("mark_end_frame");
   window.performance.measure("measure_frame_duration", "mark_start_frame", "mark_end_frame");
   if (frame % 10 === 0) {
     var timesToUpdatePosition = window.performance.getEntriesByName("measure_frame_duration");
     logAverageFrame(timesToUpdatePosition);
   }
+  */
 }
 
 // runs updatePositions on scroll
@@ -535,15 +549,21 @@ window.addEventListener('scroll', updatePositions);
 document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
-  for (var i = 0; i < 200; i++) {
+  var leftStart = 0;
+  for (var i = 0; i < NUM_PIZZAS; i++) {
     var elem = document.createElement('img');
+    leftStart = (i % cols) * s;
     elem.className = 'mover';
     elem.src = "images/pizza.png";
     elem.style.height = "100px";
     elem.style.width = "73.333px";
-    elem.basicLeft = (i % cols) * s;
+    elem.basicLeft = leftStart;
+    // Need to set default position of each pizza, since we are translating from there
+    elem.style.left = leftStart + 'px';
     elem.style.top = (Math.floor(i / cols) * s) + 'px';
     document.querySelector("#movingPizzas1").appendChild(elem);
   }
+  //This added much more scripting overhead, so I'm not using it
+  //requestAnimationFrame(updatePositions);
   updatePositions();
 });
