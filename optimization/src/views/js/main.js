@@ -25,6 +25,8 @@ const NUM_PHASES = 5;
 const NUM_PIZZAS = 64;
 // Optimization 4: See if we can do this with 64 pizzas instead of 200.
 
+// Global variables that will reduce the amount of calculation needed to resize pizzas
+var numPizzasOnMenu = 0;
 
 var pizzaIngredients = {};
 pizzaIngredients.meats = [
@@ -403,6 +405,9 @@ var pizzaElementGenerator = function(i) {
   pizzaDescriptionContainer.appendChild(ul);
   pizzaContainer.appendChild(pizzaDescriptionContainer);
 
+  // Update the global pizza counter
+  numPizzasOnMenu++;
+
   return pizzaContainer;
 };
 
@@ -429,7 +434,27 @@ var resizePizzas = function(size) {
 
   changeSliderLabel(size);
 
+   // Seems a little silly to calculate the size delta - why not just write the new size
+   // based on the slider selection?
+
+   // Optimization 2: Simply change the width property to a specific percentage
+
+   // Changes the slider value to a percent width
+   function sizeSwitcher (size) {
+     switch(size) {
+       case "1":
+         return "25%";
+       case "2":
+         return "33.33%";
+       case "3":
+         return "50%";
+       default:
+         console.log("bug in sizeSwitcher");
+     }
+   }
+
    // Returns the size difference to change a pizza element from one size to another. Called by changePizzaSlices(size).
+  /*
   function determineDx (elem, size) {
     var oldWidth = elem.offsetWidth;
     var windowWidth = document.querySelector("#randomPizzas").offsetWidth;
@@ -439,11 +464,11 @@ var resizePizzas = function(size) {
     function sizeSwitcher (size) {
       switch(size) {
         case "1":
-          return 0.25;
+          return "25%;
         case "2":
-          return 0.3333;
+          return "33%";
         case "3":
-          return 0.5;
+          return "50%";
         default:
           console.log("bug in sizeSwitcher");
       }
@@ -454,13 +479,15 @@ var resizePizzas = function(size) {
 
     return dx;
   }
+  */
 
   // Iterates through pizza elements on the page and changes their widths
+
   function changePizzaSizes(size) {
-    for (var i = 0; i < document.querySelectorAll(".randomPizzaContainer").length; i++) {
-      var dx = determineDx(document.querySelectorAll(".randomPizzaContainer")[i], size);
-      var newwidth = (document.querySelectorAll(".randomPizzaContainer")[i].offsetWidth + dx) + 'px';
-      document.querySelectorAll(".randomPizzaContainer")[i].style.width = newwidth;
+      // Optimization 1: Get the random pizza containers outside the FOR loop
+      var pizzaMenu = document.getElementsByClassName('randomPizzaContainer');
+      for (var i = 0; i < numPizzasOnMenu; i++) {
+        pizzaMenu[i].style.width = sizeSwitcher(size);
     }
   }
 
@@ -527,7 +554,7 @@ function updatePositions() {
   }
   // End of optimization 3
 
-  //This added much more scripting overhead, so I'm not using it
+  //This added more scripting overhead, which resulted in fewer FPS, so I'm not using it
   //requestAnimationFrame(updatePositions);
 
   // User Timing API to the rescue again. Seriously, it's worth learning.
@@ -563,7 +590,7 @@ document.addEventListener('DOMContentLoaded', function() {
     elem.style.top = (Math.floor(i / cols) * s) + 'px';
     document.querySelector("#movingPizzas1").appendChild(elem);
   }
-  //This added much more scripting overhead, so I'm not using it
+  //This added more scripting overhead, which resulted in fewer FPS, so I'm not using it
   //requestAnimationFrame(updatePositions);
   updatePositions();
 });

@@ -40,23 +40,19 @@ File | Location | Pipeline Stage | Change | Speed
 main.js | updatePositions (517) | Scripting | Moved the DOM reference and math out of the FOR loop | 24 fps
 main.js | updatePositions (513) | Scripting | Changed querySelectorAll call to document.getElementsByClassName | 24 fps
 main.js | updatePositions (518) | Scripting | Used "transform" instead of "left" to reduce painting time | 36 fps
-main.js | addEventListener (553) | Scripting, Painting | Reduced number of pizzas from 200 to 64 | 52 fps
+main.js | addEventListener (553) | Scripting, Painting, Compositing | Reduced number of pizzas from 200 to 64 | 52 fps
 css/style.css | .movers (36) | Painting | Added `backface-visibility: hidden` property to put each animated pizza on its own layer | 60+ fps
 
 ### <a name="slider"></a>Part 3: Pizza Slider
 
 Web site URL:  [https://sjkordis.github.io/optimization/src/views/pizza.html](https://sjkordis.github.io/optimization/src/views/pizza.html)
 
-Original animation speed = 6 fps
+Original time to resize the pizzas = 275 ms
 
-Final result = 60+ fps
+Final result = 1 ms
 
-Note: The Speed column reflects the lowest frames per second observed during scrolling.
-
-File | Location | Pipeline Stage | Change | Speed
----- | -------- | -------------- | ------ | -----
-main.js | updatePositions (517) | Scripting | Moved the DOM reference and math out of the FOR loop | 24 fps
-main.js | updatePositions (513) | Scripting | Changed querySelectorAll call to document.getElementsByClassName | 24 fps
-main.js | updatePositions (518) | Scripting | Used "transform" instead of "left" to reduce painting time | 36 fps
-main.js | addEventListener (553) | Scripting, Painting | Reduced number of pizzas from 200 to 64 | 52 fps
-css/style.css | .movers (36) | Painting | Added `backface-visibility: hidden` property to put each animated pizza on its own layer | 60+ fps
+File | Location | Pipeline Stage | Change | Time to resize the pizzas
+---- | -------- | -------------- | ------ | -------------------------
+main.js | changePizzaSizes (469) | Scripting | Moved the DOM references out of the FOR loop | 160 ms
+main.js | changePizzaSlides (442, 464) | Scripting | Simplified new size calculation to use a fixed percentage for the new width - no need for the complex Dx calculation here | 
+1 ms
