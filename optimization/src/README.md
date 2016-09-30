@@ -2,13 +2,13 @@
 
 Welcome to my website optimization project. This project has three parts:
 
-* Part 1: [PageSpeed](#pagespeed)
+* Part 1: [PageSpeed Insights](#pagespeed)
 * Part 2: [Animated Pizzas](#pizzeria)
 * Part 3: [Pizza Slider](#slider)
 
 Each change introduced to improve performance is described in the tables below.
 
-### <a name="pagespeed"></a>Part 1: PageSpeed
+### <a name="pagespeed"></a>Part 1: PageSpeed Insights
 
 Web site URL:  [https://sjkordis.github.io/optimization/src/](https://sjkordis.github.io/optimization/src/)
 
@@ -42,6 +42,16 @@ main.js | updatePositions (512) | Scripting | Changed querySelectorAll call to d
 main.js | updatePositions (525) | Scripting | Used "transform" instead of "left" to reduce painting time | 36 fps
 main.js | addEventListener (552) | Scripting, Painting, Compositing | Reduced number of pizzas from 200 to 64 | 52 fps
 css/style.css | .movers (36) | Painting | Added `backface-visibility: hidden` property to put each animated pizza on its own layer | 60+ fps
+
+NOTES:
+
+1.  I tested requestAnimationFrame(), but it added significant scripting overhead, so I didn't use it.
+
+2. Google Dev tools is still complaining about jank in the Recalculating Styles step, but that step is consistently only 1-2 ms, so I decided not to worry about it. This pertains to the update of the `transform` property inside the FOR loop in updatePositions(). Not sure how I could eliminate this jank if I want to update a style property.
+
+3. I noticed that how and where I scrolled (for example: mouse button vs. wheel, quickly vs. slowly, once vs. back and forth, etc.) affected the FPS. This was true on both my laptop and my mobile phone.
+
+4. I didn't see anyplace where a web worker would add value, so I did not use one.
 
 ### <a name="slider"></a>Part 3: Pizza Slider
 
