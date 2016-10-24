@@ -1,10 +1,7 @@
       var map;
 
-      // Create a new blank array for all the listing markers.
+      // Create a new blank array for all the restaurant markers.
       var markers = [];
-
-      // This global polygon variable is to ensure only ONE polygon is rendered.
-      var polygon = null;
 
       // Create placemarkers array to use in multiple functions to have control
       // over the number of places that show.
@@ -19,16 +16,7 @@
         });
 
         /*
-        // These are the real estate listings that will be shown to the user.
-        // Normally we'd have these in a database instead.
-        var locations = [
-          {title: 'Park Ave Penthouse', location: {lat: 40.7713024, lng: -73.9632393}},
-          {title: 'Chelsea Loft', location: {lat: 40.7444883, lng: -73.9949465}},
-          {title: 'Union Square Open Floor Plan', location: {lat: 40.7347062, lng: -73.9895759}},
-          {title: 'East Village Hip Studio', location: {lat: 40.7281777, lng: -73.984377}},
-          {title: 'TriBeCa Artsy Bachelor Pad', location: {lat: 40.7195264, lng: -74.0089934}},
-          {title: 'Chinatown Homey Space', location: {lat: 40.7180628, lng: -73.9961237}}
-        ];
+        // These are the restaurants that will be shown to the user.
         */
         var locations = [
           {
@@ -70,7 +58,7 @@
 
         var largeInfowindow = new google.maps.InfoWindow();
 
-        // Style the markers a bit. This will be our listing marker icon.
+        // Style the markers a bit. This will be our restaurant marker icon.
         var defaultIcon = makeMarkerIcon('ff0000');
 
         // Create a "highlighted location" marker color for when the user
@@ -88,7 +76,8 @@
             title: title,
             animation: google.maps.Animation.DROP,
             icon: defaultIcon,
-            id: i
+            id: i,
+            map: map
           });
           // Push the marker to our array of markers.
           markers.push(marker);
@@ -105,7 +94,7 @@
             this.setIcon(defaultIcon);
           });
         }
-        document.getElementById('show-restaurants').addEventListener('click', showListings);
+        document.getElementById('show-restaurants').addEventListener('click', showRestaurants);
 
         document.getElementById('hide-restaurants').addEventListener('click', function() {
           hideMarkers(markers);
@@ -133,7 +122,7 @@
       }
 
       // This function will loop through the markers array and display them all.
-      function showListings() {
+      function showRestaurants() {
         var bounds = new google.maps.LatLngBounds();
         // Extend the boundaries of the map for each marker and display the marker
         for (var i = 0; i < markers.length; i++) {
@@ -143,7 +132,7 @@
         map.fitBounds(bounds);
       }
 
-      // This function will loop through the listings and hide them all.
+      // This function will loop through the restaurants and hide them all.
       function hideMarkers(markers) {
         for (var i = 0; i < markers.length; i++) {
           markers[i].setMap(null);
