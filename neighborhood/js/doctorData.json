@@ -31,8 +31,8 @@
 			"name": "Angela King, MD",
 			"address": {
 				"office": "1107 S Lemay Ave, Unit 300",
-	            "lat": "40.575965",
-	            "long": "-105.059342",
+				"lat": "40.575965",
+				"long": "-105.059342"
 			},
 			"specialty": "Obstetrics and Gynecology",
 			"uid": "angela-king"
