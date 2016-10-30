@@ -1,30 +1,51 @@
 {
-	"docs": [{
-		"name": "Christopher Eriksen, MD",
-		"address": {
-			"office": "1120 E Elizabeth St, Ste F101",
-			"lat": "40.57465",
-			"long": "-105.05661"
-		},
-		"specialty": "Otolaryngology",
-		"uid": "christopher-eriksen"
-	}, {
-		"name": "Lisa Butler, DO",
-		"address": {
-			"office": "1212 E Elizabeth St",
-			"lat": "40.57472",
-			"long": "-105.05516"
-		},
-		"specialty": "Family Medicine",
-		"uid": "lisa-butler-do"
-	}, {
-		"name": "Jennifer Hendrick, MD",
-		"address": {
-			"office": "1024 S Lemay Ave",
-			"lat": "40.57176",
-			"long": "-105.05557"
-		},
-		"specialty": "Internal Medicine",	
-		"uid": "jennifer-hendrick"
-	}]
+	"docs": [
+		{
+			"name": "Christopher Eriksen, MD",
+			"address": {
+				"office": "1120 E Elizabeth St, Ste F101",
+				"lat": "40.57465",
+				"long": "-105.05661"
+			},
+			"specialty": "Otolaryngology",
+			"uid": "christopher-eriksen"
+		}, {
+			"name": "Lisa Butler, DO",
+			"address": {
+				"office": "1212 E Elizabeth St",
+				"lat": "40.57472",
+				"long": "-105.05516"
+			},
+			"specialty": "Family Medicine",
+			"uid": "lisa-butler-do"
+		}, {
+			"name": "Jennifer Hendrick, MD",
+			"address": {
+				"office": "1024 S Lemay Ave",
+				"lat": "40.57176",
+				"long": "-105.05557"
+			},
+			"specialty": "Internal Medicine",
+			"uid": "jennifer-hendrick"
+		}, {
+			"name": "Angela King, MD",
+			"address": {
+				"office": "1107 S Lemay Ave, Unit 300",
+	            "lat": "40.575965",
+	            "lon": "-105.059342",
+			},
+			"specialty": "Obstetrics & Gynecology",
+			"uid": "angela-king"
+		}
+		}, {
+			"name": "Eric Olsen",
+			"address": {
+				"office": "1024 S Lemay Ave",
+				"lat": "40.57176",
+				"long": "-105.05557"
+			},
+			"specialty": "Emergency Medicine",
+			"uid": "eric-olsen-2"
+		}
+	]
 }
