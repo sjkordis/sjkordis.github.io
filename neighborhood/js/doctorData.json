@@ -27,6 +27,24 @@
 			},
 			"specialty": "Internal Medicine",
 			"uid": "jennifer-hendrick"
+		}, {
+			"name": "Angela King, MD",
+			"address": {
+				"office": "1107 S Lemay Ave, Unit 300",
+	            "lat": "40.575965",
+	            "long": "-105.059342",
+			},
+			"specialty": "Obstetrics and Gynecology",
+			"uid": "angela-king"
+		}, {
+			"name": "Eric Olsen",
+			"address": {
+				"office": "1024 S Lemay Ave",
+				"lat": "40.57176",
+				"long": "-105.05557"
+			},
+			"specialty": "Emergency Medicine",
+			"uid": "eric-olsen-2"
 		}
 	]
 }
