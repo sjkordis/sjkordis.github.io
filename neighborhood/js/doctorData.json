@@ -15,7 +15,7 @@
 			"lat": "40.57472",
 			"long": "-105.05516"
 		},
-		"specialty": "Otolaryngology",
+		"specialty": "Family Medicine",
 		"uid": "lisa-butler-do"
 	}, {
 		"name": "Jennifer Hendrick, MD",
@@ -24,7 +24,7 @@
 			"lat": "40.57176",
 			"long": "-105.05557"
 		},
-		"specialty": "Otolaryngology",	
+		"specialty": "Internal Medicine",	
 		"uid": "jennifer-hendrick"
 	}]
 }
