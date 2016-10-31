@@ -81,6 +81,15 @@
 			},
 			"specialty": "Obstetrics and Gynecology",
 			"uid": "maude-vance"
+		}, {
+			"name": "Mark Rotman, MD",
+			"address": {
+				"office": "2001 S Shields St, Building 1",
+				"lat": "40.5609",
+				"long": "-105.09641"
+			},
+			"specialty": "Family Medicine",
+			"uid": "mark-rotman"
 		}
 	]
 }
