@@ -37,7 +37,7 @@
 			"specialty": "Obstetrics and Gynecology",
 			"uid": "angela-king"
 		}, {
-			"name": "Eric Olsen",
+			"name": "Eric Olsen, MD",
 			"address": {
 				"office": "1024 S Lemay Ave",
 				"lat": "40.57176",
@@ -45,6 +45,42 @@
 			},
 			"specialty": "Emergency Medicine",
 			"uid": "eric-olsen-2"
+		}, {
+			"name": "Michael Thakor, MD",
+			"address": {
+				"office": "2121 E Harmony Rd, Unit 361",
+				"lat": "40.52198",
+				"long": "-105.03704"
+			},
+			"specialty": "Internal Medicine",
+			"uid": "michael-thakor-md"
+		}, {
+			"name": "Peter Koplyay, MD",
+			"address": {
+				"office": "2008 Caribou Dr",
+				"lat": "40.53206",
+				"long": "-105.0409"
+			},
+			"specialty": "Body Imaging",
+			"uid": "peter-koplyay"
+		}, {
+			"name": "Mark Loeb, MD",
+			"address": {
+				"office": "1025 Pennock Pl, Suite 111",
+				"lat": "40.5756",
+				"long": "-105.05834"
+			},
+			"specialty": "Family Medicine",
+			"uid": "mark-loeb"
+		}, {
+			"name": "Maude Vance, MD",
+			"address": {
+				"office": "1107 S Lemay Ave, Unit 300",
+				"lat": "40.57202",
+				"long": "-105.05846"
+			},
+			"specialty": "Obstetrics and Gynecology",
+			"uid": "maude-vance"
 		}
 	]
 }
