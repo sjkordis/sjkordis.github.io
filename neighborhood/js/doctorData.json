@@ -90,6 +90,15 @@
 			},
 			"specialty": "Family Medicine",
 			"uid": "mark-rotman"
+		}, {
+			"name": "Susie Klingner, MD",
+			"address": {
+				"office": "3702 Automation Way, Suite 103",
+				"lat": "40.53655",
+				"long": "-105.04069"
+			},
+			"specialty": "Diagnostic Radiology",
+			"uid": "susan-klingner"
 		}
 	]
 }
