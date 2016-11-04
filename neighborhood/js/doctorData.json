@@ -1,6 +1,6 @@
 
 
-{ "docs:" [
+{ "docs": [
 { "name": " Kathleen Whitley, MD", "address": {"office": "525 W Oak St", "lat": "40.58525", "long": "-105.08555" },"specialty": " Psychiatry", "uid": "kathleen-whitley" },
 
 { "name": " Annette Vanbaalen, MD", "address": {"office": "315 Canyon Ave, Ste 1", "lat": "40.58385", "long": "-105.08339" },"specialty": " Family Medicine", "uid": "annette-vanbaalen-md" },
