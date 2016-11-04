@@ -114,15 +114,11 @@
 
 { "name": " Derek Zukosky, DO", "address": {"office": "400 Indiana St, Ste 300", "lat": "39.72255", "long": "-105.16378" },"specialty": " Urology", "uid": " derek-zukosky" },
 
-{ "name": " Ryan Hartman, MD", "address": {"office": "750 Mount Carmel Mall, Ste 300", "lat": "39.95893", "long": "-83.0208" },"specialty": " Pediatric Orthopedic Surgery", "uid": " ryan-hartman-md" },
-
 { "name": " Kevin Tool, MD", "address": {"office": "1107 S Lemay Ave, Unit 300", "lat": "40.57202", "long": "-105.05846" },"specialty": " Obstetrics & Gynecology", "uid": " kevin-tool" },
 
 { "name": " Joseph Lopez, MD", "address": {"office": "1024 S Lemay Ave", "lat": "40.57176", "long": "-105.05557" },"specialty": " Family Medicine Hospice and Palliative Medicine", "uid": " joseph-lopez-2" },
 
 { "name": " John McVicker, MD", "address": {"office": "1725 E Boulder St, Ste 101", "lat": "38.83825", "long": "-104.79552" },"specialty": " Neurological Surgery", "uid": " john-mcvicker" },
-
-{ "name": " Michael Thakor, MD", "address": {"office": "10170 Nicholas St", "lat": "41.269071", "long": "-96.071068" },"specialty": " Internal Medicine", "uid": " michael-thakor-md" },
 
 { "name": " Peggy Liao, MD", "address": {"office": "776 W Eisenhower Blvd", "lat": "40.404565", "long": "-105.087013" },"specialty": " Dermatology", "uid": " peggy-liao-md" },
 
@@ -145,8 +141,6 @@
 { "name": " Mark Loeb, MD", "address": {"office": "2121 E Harmony Rd, Unit 310", "lat": "40.52198", "long": "-105.03704" },"specialty": " Family Medicine", "uid": " mark-loeb" },
 
 { "name": " Warren Schutte, MD", "address": {"office": "2030 Mountain View Ave, Ste 100", "lat": "40.18219", "long": "-105.12806" },"specialty": " Plastic Surgery", "uid": " warren-schutte" },
-
-{ "name": " Michael Covlin, MD", "address": {"office": "1 Good Samaritan Way", "lat": "38.297273", "long": "-88.938985" },"specialty": " Obstetrics & Gynecology", "uid": " michael-covlin-md" },
 
 { "name": " Laurie Patton, MD", "address": {"office": "4674 Snow Mesa Dr, Ste 140", "lat": "40.52152", "long": "-105.03097" },"specialty": " Family Medicine", "uid": " laura-patton" },
 
