@@ -70,8 +70,6 @@
 
 { "name": " Warren James, MD", "address": {"office": "1107 S Lemay Ave, Unit 300", "lat": "40.57202", "long": "-105.05846" },"specialty": " Obstetrics & Gynecology", "uid": " warren-james" },
 
-{ "name": " Nathan Swartz, MD", "address": {"office": "480 Medical Center Dr", "lat": "39.99256", "long": "-83.02006" },"specialty": " Physical Medicine & Rehabilitation", "uid": " nathan-swartz" },
-
 { "name": " Cathy Ow, MD", "address": {"office": "1024 S Lemay Ave", "lat": "40.57176", "long": "-105.05557" },"specialty": " Internal Medicine", "uid": " cathy-ow" },
 
 { "name": " Susan Klingner, MD", "address": {"office": "3519 Richmond Dr", "lat": "40.538662", "long": "-105.097798" },"specialty": " Family Medicine", "uid": " susan-klingner" },
