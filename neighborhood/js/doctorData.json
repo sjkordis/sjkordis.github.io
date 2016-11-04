@@ -1,4 +1,4 @@
-{ "docs:" [
+"docs:" [
 { "name": " Lillian Klancar, MD", "address": {"office": "8200 E Belleview Ave, Ste 270E", "lat": "39.62335", "long": "-104.89358" },"specialty": " Hematology & Oncology", "uid": "lillian-klancar" },
 
 { "name": " Arnold Pfahnl, MD", "address": {"office": "1900 Boise Ave, Ste 200", "lat": "40.412643", "long": "-105.05348" },"specialty": " Cardiovascular Disease", "uid": "arnold-pfahnl-md" },
@@ -198,4 +198,4 @@
 { "name": " Kara Micetich, MD", "address": {"office": "2121 E Harmony Rd, Unit 230", "lat": "40.52198", "long": "-105.03704" },"specialty": " Obstetrics & Gynecology", "uid": "kara-micetich" },
 
 { "name": " Randall Marsh, MD", "address": {"office": "1900 Boise Ave, Ste 200", "lat": "40.412643", "long": "-105.05348" },"specialty": " Cardiovascular Disease", "uid": "randall-marsh-md" }
-] }
+]
