@@ -1,29 +1,38 @@
-<!DOCTYPE html><meta charset="utf-8">
-<html>
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="css/styles.css">
-  </head>
-  <body>
-    <div class="container">
-      <div class="options-box">
-        <h1>Where Shall We Eat Lunch?</h1>
-        <hr>
-        <ul data-bind="foreach: restaurantList">
-          <li data-bind="text: name, click: $parent.setRestaurant"></li>
-        </ul>
-        <hr>
-        <div id="RestaurantInfo" data-bind="with:currentRestaurant">
-          <h2 data-bind="text: name"></h2>
-        </div>
-      </div>
-      <div id="map"></div>
-    </div>
-    <script type='text/javascript' src='js/knockout-3.4.0.js'></script>
-    <script type='text/javascript' src='js/jquery-3.1.1.min.js'></script>
-    <script async defer
-        src='https://maps.googleapis.com/maps/api/js?libraries=places,drawing,geometry&key=AIzaSyCsmsVQg2fuvehGNXvA-4d5qrtNOqHUN7U&v=3&callback=initMap'>
-    </script>
-    <script type='text/javascript' src='js/model.js'></script>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Best Doctors In Town</title>
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+	<div id="map" >
+	</div>
+
+	<h1 id="title-box">Best Doctors In Town&nbsp;&nbsp;&nbsp;
+		<a href="#" data-bind="click: toggleList">☰</a>
+	</h1>
+
+	<input id="filter-box" data-bind="textInput: filter, css: { visible: isVisible }"
+		placeholder=" Filter by name...">
+	<div id="list-box" data-bind="css: { visible: isVisible }">
+		<h3 data-bind="text: loadMsg, visible: loadMsg"></h3>
+		<ul data-bind="foreach: filteredList">
+			<li class="list-item">
+				<a href="#" data-bind="click: $root.clickListItem">
+					<span class="doc-name" data-bind="text: name"></span>
+				</a>
+			</li>
+		</ul>
+	</div>
+
+	<script type='text/javascript' src='js/lib/knockout-3.4.0.js'></script>
+	<script type='text/javascript' src='js/lib/jquery-3.1.1.min.js'></script>
+	<script src="js/doctor.js"></script>
+	<script src="js/app.js"></script>
+	<script async defer onerror="initMapError()"
+		src="https://maps.googleapis.com/maps/api/js?&key=AIzaSyCsmsVQg2fuvehGNXvA-4d5qrtNOqHUN7U&v=3&callback=initMap">
+	</script>
+</body>
 </html>
