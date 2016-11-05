@@ -1,11 +1,7 @@
 { "docs": [
 { "name": " Lillian Klancar, MD", "address": {"office": "2121 E Harmony Rd, Unit 150", "lat": "40.52198", "long": "-105.03704" },"specialty": " Hematology & Oncology", "uid": "lillian-klancar" },
 
-{ "name": " Arnold Pfahnl, MD", "address": {"office": "1900 Boise Ave, Ste 200", "lat": "40.412643", "long": "-105.05348" },"specialty": " Cardiovascular Disease", "uid": "arnold-pfahnl-md" },
-
 { "name": " Shelley Oliver, MD", "address": {"office": "2121 E Harmony Rd, Unit 290", "lat": "40.52198", "long": "-105.03704" },"specialty": " Orthopedic Surgery", "uid": "shelley-oliver" },
-
-{ "name": " Emilia Ripoll, MD", "address": {"office": "2500 Rocky Mountain Ave, Ste 200", "lat": "40.414141", "long": "-104.99736" },"specialty": " Urology", "uid": "emilia-ripoll" },
 
 { "name": " Robert Quaid, MD", "address": {"office": "2121 E Harmony Rd, Unit 250", "lat": "40.52198", "long": "-105.03704" },"specialty": " Surgery", "uid": "robert-quaid" },
 
@@ -91,8 +87,6 @@
 
 { "name": " Maude Vance, MD", "address": {"office": "1107 S Lemay Ave, Unit 300", "lat": "40.57202", "long": "-105.05846" },"specialty": " Obstetrics & Gynecology", "uid": "maude-vance" },
 
-{ "name": " Ryan Hartman, MD", "address": {"office": "3470 E 15th St", "lat": "40.40809", "long": "-105.02863" },"specialty": " Pediatric Orthopedic Surgery", "uid": "ryan-hartman-md" },
-
 { "name": " Kevin Tool, MD", "address": {"office": "1107 S Lemay Ave, Unit 300", "lat": "40.57202", "long": "-105.05846" },"specialty": " Obstetrics & Gynecology", "uid": "kevin-tool" },
 
 { "name": " Joseph Lopez, MD", "address": {"office": "1024 S Lemay Ave", "lat": "40.57176", "long": "-105.05557" },"specialty": " Family Medicine Hospice and Palliative Medicine", "uid": "joseph-lopez-2" },
@@ -108,8 +102,6 @@
 { "name": " James Kesler, MD", "address": {"office": "3519 Richmond Dr", "lat": "40.538662", "long": "-105.097798" },"specialty": " Family Medicine", "uid": "james-kesler" },
 
 { "name": " Mark Loeb, MD", "address": {"office": "2121 E Harmony Rd, Unit 310", "lat": "40.52198", "long": "-105.03704" },"specialty": " Family Medicine", "uid": "mark-loeb" },
-
-{ "name": " Warren Schutte, MD", "address": {"office": "2500 Rocky Mountain Ave, # 130", "lat": "40.414141", "long": "-104.99736" },"specialty": " Plastic Surgery", "uid": "warren-schutte" },
 
 { "name": " Michael Covlin, MD", "address": {"office": "2121 E Harmony Rd, Unit 230", "lat": "40.52198", "long": "-105.03704" },"specialty": " Obstetrics & Gynecology", "uid": "michael-covlin-md" },
 
@@ -129,8 +121,6 @@
 
 { "name": " Peter Koplyay, MD", "address": {"office": "2008 Caribou Dr", "lat": "40.53206", "long": "-105.0409" },"specialty": " Body Imaging", "uid": "peter-koplyay" },
 
-{ "name": " Douglas Christensen, MD", "address": {"office": "2500 Rocky Mountain Ave, Ste 100", "lat": "40.414141", "long": "-104.99736" },"specialty": " Pediatric Cardiology", "uid": "douglas-christensen-md" },
-
 { "name": " Christopher Drysdale, MD", "address": {"office": "4674 Snow Mesa Dr, Ste 120", "lat": "40.52152", "long": "-105.03097" },"specialty": " Internal Medicine", "uid": "christopher-drysdale" },
 
 { "name": " Tristan Dow, MD", "address": {"office": "2121 E Harmony Rd, Unit 100", "lat": "40.52198", "long": "-105.03704" },"specialty": " Cardiovascular Disease", "uid": "tristan-dow" },
@@ -145,23 +135,17 @@
 
 { "name": " Karin Schmidova, MD", "address": {"office": "608 E Harmony Rd, Ste 101", "lat": "40.5239", "long": "-105.06719" },"specialty": " Surgery", "uid": "karin-schmidova" },
 
-{ "name": " Curtis Crylen, MD", "address": {"office": "1813 Cheyenne Ave", "lat": "40.41145", "long": "-105.05018" },"specialty": " Urology", "uid": "curtis-crylen" },
-
 { "name": " Cory Foster, DDS", "address": {"office": "2000 Vermont Dr, Ste 210", "lat": "40.54357", "long": "-105.04107" },"specialty": " Dentistry", "uid": "cory-foster" },
 
 { "name": " Jay Kurth, DO", "address": {"office": "702 W Drake Rd, Bldg A", "lat": "40.55293", "long": "-105.08994" },"specialty": " Family Medicine", "uid": "jay-kurth" },
 
 { "name": " Kara Micetich, MD", "address": {"office": "2121 E Harmony Rd, Unit 230", "lat": "40.52198", "long": "-105.03704" },"specialty": " Obstetrics & Gynecology", "uid": "kara-micetich" },
 
-{ "name": " Randall Marsh, MD", "address": {"office": "1900 Boise Ave, Ste 200", "lat": "40.412643", "long": "-105.05348" },"specialty": " Cardiovascular Disease", "uid": "randall-marsh-md" },
-
 { "name": " Matthew Robertson, MD", "address": {"office": "1120 E Elizabeth St, Ste F101", "lat": "40.57465", "long": "-105.05661" },"specialty": " Otolaryngology", "uid": "matthew-robertson" },
 
 { "name": " Matthew Purvis, MD", "address": {"office": "2121 E Harmony Rd, Unit 100", "lat": "40.52198", "long": "-105.03704" },"specialty": " Cardiovascular Disease", "uid": "matthew-purvis" },
 
 { "name": " John Collins, MD", "address": {"office": "2315 E Harmony Rd, Ste 130", "lat": "40.52169", "long": "-105.03655" },"specialty": " Surgery", "uid": "john-collins-2" },
-
-{ "name": " Crystal North, DO", "address": {"office": "No practice location info available", "lat": "No practice location info available", "long": "No practice location info available" },"specialty": " Gastroenterology", "uid": "crystal-north-do" },
 
 { "name": " Grant Taylor, DO", "address": {"office": "702 W Drake Rd, Bldg A", "lat": "40.55293", "long": "-105.08994" },"specialty": " Family Medicine", "uid": "grant-taylor-do" },
 
@@ -185,15 +169,33 @@
 
 { "name": " Michael Lynch, DO", "address": {"office": "1101 Oakridge Dr, Unit B", "lat": "40.52081", "long": "-105.05763" },"specialty": " Internal Medicine", "uid": "michael-lynch-do" },
 
-{ "name": " Steven Seiler, MD", "address": {"office": "3470 E 15th St", "lat": "40.40809", "long": "-105.02863" },"specialty": " Hand Surgery", "uid": "steven-seiler" },
-
-{ "name": " Natalie Santelli, OD", "address": {"office": "6125 Sky Pond Dr, Ste 160", "lat": "40.41155", "long": "-104.98796" },"specialty": " Corneal and Contact Management", "uid": "natalie-santelli" },
-
 { "name": " Adam Mack, MD", "address": {"office": "2121 E Harmony Rd, Unit 300", "lat": "40.52198", "long": "-105.03704" },"specialty": " Hospitalist", "uid": "adam-mack" },
 
 { "name": " Eric Olsen, MD", "address": {"office": "1024 S Lemay Ave", "lat": "40.57176", "long": "-105.05557" },"specialty": " Emergency Medicine", "uid": "eric-olsen-2" },
 
 { "name": " Elizabeth Maes, MD", "address": {"office": "3702 Automation Way, Ste 103", "lat": "40.53655", "long": "-105.04069" },"specialty": " Family Medicine", "uid": "elizabeth-maes" },
 
-{ "name": " Lawrence Murphy, MD", "address": {"office": "3702 Automation Way, Ste 103", "lat": "40.53655", "long": "-105.04069" },"specialty": " Family Medicine", "uid": "lawrence-murphy" }
+{ "name": " Lawrence Murphy, MD", "address": {"office": "3702 Automation Way, Ste 103", "lat": "40.53655", "long": "-105.04069" },"specialty": " Family Medicine", "uid": "lawrence-murphy" },
+
+{ "name": " Mark Durkan, MD", "address": {"office": "3702 S Timberline Rd", "lat": "40.53645", "long": "-105.03862" },"specialty": " Gastroenterology", "uid": "mark-durkan" },
+
+{ "name": " Keri Mounce, MD", "address": {"office": "2121 E Harmony Rd, Unit 310", "lat": "40.52198", "long": "-105.03704" },"specialty": " Family Medicine", "uid": "keri-mounce-md" },
+
+{ "name": " Bernard Birnbaum, MD", "address": {"office": "1025 Pennock Pl, Ste 114", "lat": "40.575965", "long": "-105.059342" },"specialty": " Family Medicine", "uid": "bernard-birnbaum-md" },
+
+{ "name": " Phillip Rhoads, MD", "address": {"office": "702 W Drake Rd, Bldg A", "lat": "40.55293", "long": "-105.08994" },"specialty": " Adolescent Medicine", "uid": "phillip-rhoads-md" },
+
+{ "name": " Krishna Murthy, MD", "address": {"office": "2121 E Harmony Rd, Unit 350", "lat": "40.52198", "long": "-105.03704" },"specialty": " Allergy & Immunology", "uid": "krishna-murthy" },
+
+{ "name": " Thomas Blomquist, MD", "address": {"office": "608 E Harmony Rd, Ste 101", "lat": "40.5239", "long": "-105.06719" },"specialty": " Surgery", "uid": "thomas-blomquist" },
+
+{ "name": " Joshua Petit, MD", "address": {"office": "2121 E Harmony Rd, Unit 160", "lat": "40.52198", "long": "-105.03704" },"specialty": " Radiation Oncology", "uid": "joshua-petit" },
+
+{ "name": " James Teumer, DO", "address": {"office": "2500 Rocky Mountain Ave", "lat": "40.414141", "long": "-104.99736" },"specialty": " Emergency Medicine", "uid": "james-teumer" },
+
+{ "name": " Yvonne Hinojosa, MD", "address": {"office": "1025 Pennock Pl, Ste 111", "lat": "40.5756", "long": "-105.05834" },"specialty": " Family Medicine", "uid": "yvonne-hinojosa" },
+
+{ "name": " Milford Thieszen, MD", "address": {"office": "2509 Research Blvd", "lat": "40.55391", "long": "-105.08796" },"specialty": " Family Medicine Adult Medicine", "uid": "milford-thieszen" },
+
+{ "name": " Arthur Sands, MD", "address": {"office": "1021 Robertson St", "lat": "40.57338", "long": "-105.06" },"specialty": " Family Medicine", "uid": "arthur-sands" }
 ] }
