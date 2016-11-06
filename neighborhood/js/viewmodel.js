@@ -200,7 +200,9 @@ function ViewModel() {
     $.getJSON(jsonUrl, function(data) {
         var doctors = [];
         var doctor;
-        var bounds = new google.maps.LatLngBounds();
+        //var bounds = new google.maps.LatLngBounds();
+
+        bounds = new google.maps.LatLngBounds();
 
         data.docs.forEach(function(dataObj) {
             // Create a new doctor
@@ -220,14 +222,6 @@ function ViewModel() {
         // Resize the map to display all markers in the bounds object
         map.fitBounds(bounds);
 
-        // Resize the map when the user resizes the window
-        window.onresize = function() {
-            for (i=0; i<doctors.length; i++) {
-                bounds.extend(this.mapMarker.position);
-            }
-            map.fitBounds(bounds);
-        }
-        
         // Set the loading message to null to hide it
         self.loadMsg(null);
     }).fail(function() {
@@ -241,14 +235,13 @@ function ViewModel() {
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
         zoom: 15,
-        center: {lat: 40.5853, lng: -105.0844},
+        center: {lat: 40.5853, lng: -105.0844}, // Fort Collins, Colorado
         mapTypeControl: false,
     });
 
     // Start Knockout only after the map is initialized
     ko.applyBindings(new ViewModel());
 }
-
 
 // Fail gracefully if unable to load the Google Map (callback)
 function initMapError() {
@@ -258,3 +251,13 @@ function initMapError() {
 
 // Google Map object
 var map;
+
+// Global variable to hold the initial map bounds with all markers
+var bounds;
+
+// Resize the map when the user resizes the window (for responsiveness)
+window.onresize = function() {
+    if (bounds != null) {
+        map.fitBounds(bounds);
+    }
+}
