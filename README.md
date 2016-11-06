@@ -24,8 +24,8 @@ The implementation uses two steps:
 
 NOTES:
 
-a.  To understand the Google Maps portion of this assignment, I did all the exercises provided in the lectures. Same for the KnockOut and API portions.
+1.  To understand the Google Maps portion of this assignment, I did all the exercises provided in the lectures. Same for the KnockOut and API portions.
 
-b. I read many Udacity forum posts and drew inspiration from the suggestions offered. I also consulted Stack Overflow when I got stuck, which happened frequently.
+2. I read many Udacity forum posts and drew inspiration from the suggestions offered. I also consulted Stack Overflow when I got stuck, which happened frequently.
 
-c. I tested the application on two Windows laptops (with and without a large monitor), an Android phone, and an Android tablet. I used the Google Chrome device emulator to test against virtual iOS devices.
+3. I tested the application on two Windows laptops (with and without a large monitor), an Android phone, and an Android tablet. I used the Google Chrome device emulator to test against virtual iOS devices.
