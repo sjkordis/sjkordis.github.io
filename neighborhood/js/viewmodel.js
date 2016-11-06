@@ -220,6 +220,14 @@ function ViewModel() {
         // Resize the map to display all markers in the bounds object
         map.fitBounds(bounds);
 
+        // Resize the map when the user resizes the window
+        window.onresize = function() {
+            for (i=0; i<doctors.length; i++) {
+                bounds.extend(this.mapMarker.position);
+            }
+            map.fitBounds(bounds);
+        }
+        
         // Set the loading message to null to hide it
         self.loadMsg(null);
     }).fail(function() {
