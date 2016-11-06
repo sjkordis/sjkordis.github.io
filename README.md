@@ -1,67 +1,31 @@
-## Website Performance Optimization Portfolio Project
+## Neighborhood Map Project
 
-Welcome to my website optimization project. This project has three parts:
+Welcome to my Neighborhood Map project. This web page lists the 100 highest rated doctors nearest my home in Fort Collins, Colorado according to the website BetterDoctors.com. It shows the location of each doctor's office on a map.
 
-* Part 1: [PageSpeed Insights](#pagespeed)
-* Part 2: [Animated Pizzas](#pizzeria)
-* Part 3: [Pizza Slider](#slider)
+To learn more about a specific doctor, click that doctor's name in the list on the left or click a marker on the map. An info window displays the doctor's specialty, address, and rating. Only one info window can be open at any given time.
 
-Each change introduced to improve performance is described in the tables below.
+This project emphasizes the following concepts:
 
-### <a name="pagespeed"></a>Part 1: PageSpeed Insights
+* Separation of concerns
+* Asynchronous data retrieval
+* REST APIs
 
-Web site URL:  [https://sjkordis.github.io/optimization/src/](https://sjkordis.github.io/optimization/src/)
+It is implemented using KnockOut and features asynchronous calls to the Google Maps Javascript API and the BetterDoctors API.
 
-Original PageSpeed Insights score = 27 mobile / 29 desktop
+Web site URL:  [https://sjkordis.github.io/neighborhood/](https://sjkordis.github.io/neighborhood/)
 
-Final result = 83 mobile / 94 desktop
+Location of source files:  [https://github.com/sjkordis/sjkordis.github.io/tree/master/neighborhood/](https://github.com/sjkordis/sjkordis.github.io/tree/master/neighborhood)
 
-File | Location | Change Made | Mobile Score | Desktop Score |
----- | -------- | ----------- | ------------ | ------------- |
-index.html | 14 | Added `media = "print"` attribute to stylesheet link for print.css | 27 | 29
-pizzeria.jpg | n/a | Resized to 100x75 px for thumbnail | 72 | 86
-index.html | 24 | Added `async` attribute to google-analytics link | 72 | 86
-css/style.css | 11 | Changed font-family to "san serif" in css/style.css (also removed link to OpenSans web font in index.html) | 85 | 91
-index.html | 73 | Inlined CSS at end of HTML file | 93 | 94
-index.html | 76 | Minified CSS using cssminifier.com | 93 | 94
+The implementation uses two steps:
 
-### <a name="pizzeria"></a>Part 2: Animated Pizzas
+1. The first step reads the data from the minified file [js/doctorData.json](js/doctorData.json) and prepares the list of doctors displayed on the left. The contents of this file were prepared ahead of time to reduce the load time for the application (see [prepDocs.html](prepDocs.html)). This reduced the load time by approximately 5 seconds. The list of doctors is a KnockOut observable array.
 
-Web site URL:  [https://sjkordis.github.io/optimization/src/views/pizza.html](https://sjkordis.github.io/optimization/src/views/pizza.html)
-
-Original animation speed = 6 fps
-
-Final result = 60+ fps
-
-Note: The Speed column reflects the lowest frames per second observed during scrolling.
-
-File | Location | Pipeline Stage | Change | Speed
----- | -------- | -------------- | ------ | -----
-main.js | updatePositions (516) | Scripting | Moved the DOM reference and math out of the FOR loop | 24 fps
-main.js | updatePositions (512) | Scripting | Changed querySelectorAll call to document.getElementsByClassName | 24 fps
-main.js | updatePositions (525) | Scripting | Used "transform" instead of "left" to reduce painting time | 36 fps
-main.js | addEventListener (552) | Scripting, Painting, Compositing | Reduced number of pizzas from 200 to 64 | 52 fps
-css/style.css | .movers (36) | Painting | Added `backface-visibility: hidden` property to put each animated pizza on its own layer | 60+ fps
+2. The second step makes an asynchronous call to the BetterDoctors API to retrieve the rating for the selected doctor. It displays an info window on the Google Map containing information about the doctor's practice, including the rating.
 
 NOTES:
 
-1.  I tested requestAnimationFrame(), but it added significant scripting overhead, so I didn't use it.
+a.  To understand the Google Maps portion of this assignment, I did all the exercises provided in the lectures. Same for the KnockOut and API portions.
 
-2. Google Dev tools is still complaining about jank in the Recalculating Styles step, but that step is consistently only 1-2 ms, so I decided not to worry about it. This pertains to the update of the `transform` property inside the FOR loop in updatePositions(). Not sure how I could eliminate this jank if I want to update a style property.
+b. I read many Udacity forum posts and drew inspiration from the suggestions offered. I also consulted Stack Overflow when I got stuck, which happened frequently.
 
-3. I noticed that how and where I scrolled (for example: mouse button vs. wheel, quickly vs. slowly, once vs. back and forth, etc.) affected the FPS. This was true on both my laptop and my mobile phone.
-
-4. I didn't see anyplace where a web worker would add value, so I did not use one.
-
-### <a name="slider"></a>Part 3: Pizza Slider
-
-Web site URL:  [https://sjkordis.github.io/optimization/src/views/pizza.html](https://sjkordis.github.io/optimization/src/views/pizza.html)
-
-Original time to resize the pizzas = 275 ms
-
-Final result = 1 ms
-
-File | Location | Pipeline Stage | Change | Time to resize the pizzas
----- | -------- | -------------- | ------ | -------------------------
-main.js | changePizzaSizes (469) | Scripting | Moved the DOM references out of the FOR loop | 160 ms
-main.js | changePizzaSlides (442-464) | Scripting | Simplified new size calculation to use a fixed percentage for the new width - no need for the complex Dx calculation here | 1 ms
+c. I tested the application on two Windows laptops (with and without a large monitor), an Android phone, and an Android tablet. I used the Google Chrome device emulator to test against virtual iOS devices.
