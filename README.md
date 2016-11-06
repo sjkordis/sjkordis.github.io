@@ -12,7 +12,7 @@ This project emphasizes the following concepts:
 
 It is implemented using KnockOut and features asynchronous calls to the Google Maps Javascript API and the BetterDoctors API.
 
-Web site URL:  [https://sjkordis.github.io/neighborhood/](https://sjkordis.github.io/neighborhood/)
+URL to run the app:  [https://sjkordis.github.io/neighborhood/](https://sjkordis.github.io/neighborhood/)
 
 Location of source files:  [https://github.com/sjkordis/sjkordis.github.io/tree/master/neighborhood/](https://github.com/sjkordis/sjkordis.github.io/tree/master/neighborhood)
 
