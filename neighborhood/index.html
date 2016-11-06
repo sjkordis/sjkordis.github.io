@@ -14,22 +14,26 @@
 	<div id="map" >
 	</div>
 
-	<h1 id="title-box">Best Doctors In Town&nbsp;&nbsp;&nbsp;
-		<a href="#" data-bind="click: toggleList">&#8801;</a>
-	</h1>
+	<nav>
+		<h1 id="title-box">Best Doctors In Town&nbsp;&nbsp;&nbsp;
+			<a href="#" data-bind="click: toggleList">&#8801;</a>
+		</h1>
+	</nav>
 
-	<input id="filter-box" data-bind="textInput: filter, css: { visible: isVisible }"
-		placeholder=" Filter by name...">
-	<div id="list-box" data-bind="css: { visible: isVisible }">
-		<h3 data-bind="text: loadMsg, visible: loadMsg"></h3>
-		<ul data-bind="foreach: filteredList">
-			<li class="list-item">
-				<a href="#" data-bind="click: $root.clickListItem">
-					<span class="doc-name" data-bind="text: name"></span>
-				</a>
-			</li>
-		</ul>
-	</div>
+	<aside>
+		<input id="filter-box" data-bind="textInput: filter, css: { visible: isVisible }"
+			placeholder=" Filter by name...">
+		<div id="list-box" data-bind="css: { visible: isVisible }">
+			<h3 data-bind="text: loadMsg, visible: loadMsg"></h3>
+			<ul data-bind="foreach: filteredList">
+				<li class="list-item">
+					<a href="#" data-bind="click: $root.clickListItem">
+						<span class="doc-name" data-bind="text: name"></span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</aside>
 
 	<script type='text/javascript' src='js/lib/knockout-3.4.0.js'></script>
 	<script type='text/javascript' src='js/lib/jquery-3.1.1.min.js'></script>
