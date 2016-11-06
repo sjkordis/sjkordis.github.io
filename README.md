@@ -18,7 +18,7 @@ Location of source files:  [https://github.com/sjkordis/sjkordis.github.io/tree/
 
 The implementation uses two steps:
 
-1. The first step reads the data from the minified file [js/doctorData.json](js/doctorData.json) and prepares the list of doctors displayed on the left. The contents of this file were prepared ahead of time to reduce the load time for the application (see [prepDocs.html](prepDocs.html)). This reduced the load time by approximately 5 seconds. The list of doctors is a KnockOut observable array.
+1. The first step reads the data from the minified file [js/doctorData.json](https://github.com/sjkordis/sjkordis.github.io/blob/master/neighborhood/js/doctorData.json) and prepares the list of doctors displayed on the left. The contents of this file were prepared ahead of time to reduce the load time for the application (see [prepDocs.html](https://github.com/sjkordis/sjkordis.github.io/blob/master/neighborhood/prepDocs.html)). This reduced the load time by approximately 5 seconds. The list of doctors is a KnockOut observable array.
 
 2. The second step makes an asynchronous call to the BetterDoctors API to retrieve the rating for the selected doctor. It displays an info window on the Google Map containing information about the doctor's practice, including the rating.
 
